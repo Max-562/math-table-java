@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Table Generator </h1>
+    <div class="container3">
+        <label for="enternumber">
+            Enter Number:<input type="number" id="Enternumber" placeholder="Enter the table number">
+        </label>
+        <br>
+        <br>
+        <label for="enterlimit">
+            Enter Limit:<input type="number" id="limit" placeholder="Enter the limit number">
+        </label>
+        <br>
+    <br>
+    <br>
+    <div class="but">
+    <button onclick="calculate()">calculate</button>
+</div>
+    <br>
+    <br>
+    <div class="reset">
+    <button onclick="Reset()">Reset</button>
+</div>
+    <br>
+</div>
+    <div class="Mathtable">
+<table id="output1">
+</table>
+</div>
+    <script>
+        function  calculate()
+{
+    let myEnterNumber = Number(document.getElementById("Enternumber").value);
+    let myLimitNumber = Number(document.getElementById("limit").value);
+    let output  = "" ;
+
+    for(let i=1; i <= myLimitNumber; i++)
+    {
+     output += `<tr><td>${myEnterNumber}</td><td> * </td><td>${i}</td><td>=</td><td>${myEnterNumber * i}</td> <br>`;
+    }
+    document.getElementById("output1").innerHTML = output;
+}
+function Reset(){
+     document.getElementById("Enternumber").value = "";
+    document.getElementById("limit").value  = "";
+    document.getElementById("output1").innerHTML = output = "";
+}
+    </script>
+</body> 
